@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vencer com Visão | Plano de Transformação em 40 Dias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <h1>Vencer com Visão</h1>
+      <p>
+        Um guia digital completo de autoajuda com dicas, vídeos motivacionais e tarefas diárias
+        para construir uma nova realidade em 40 dias.
+      </p>
+      <button id="startToday" class="button button--primary">Começar agora</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="dashboard" aria-label="Resumo e motivação diária">
+      <div class="score-card">
+        <h2>Progresso Geral</h2>
+        <div class="score-metric">
+          <span class="label">Pontuação:</span>
+          <span id="scoreValue" class="value">0</span>
+        </div>
+        <div class="score-metric">
+          <span class="label">Missões concluídas:</span>
+          <span id="tasksComplete" class="value">0 / 0</span>
+        </div>
+        <div class="progress-wrapper" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+        <p id="progressText" class="progress-text">0% do plano concluído</p>
+      </div>
+
+      <div class="daily-highlight">
+        <h2>Missão do Dia <span id="currentDayLabel"></span></h2>
+        <p class="daily-phase" id="dayPhase"></p>
+        <p class="daily-theme" id="dayTheme"></p>
+        <p class="daily-focus" id="dayFocus"></p>
+        <div class="affirmation-card">
+          <h3>Afirmação do Dia</h3>
+          <p id="dailyAffirmation"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="plan" class="plan" aria-label="Plano completo de 40 dias">
+      <div class="plan-header">
+        <h2>Plano de Mudança de Vida em 40 dias</h2>
+        <p>
+          Complete as ações de cada dia para acumular pontos, desenvolver novos hábitos e criar uma
+          visão de futuro clara para sua vida.
+        </p>
+      </div>
+
+      <div class="timeline" id="dayList" aria-label="Seleção de dias do plano"></div>
+
+      <article class="day-detail" aria-live="polite">
+        <header class="day-header">
+          <h3 id="dayTitle"></h3>
+          <span id="daySubtitle"></span>
+        </header>
+
+        <section class="task-section" aria-label="Tarefas do dia">
+          <h4>Tarefas</h4>
+          <ul id="taskList" class="task-list"></ul>
+        </section>
+
+        <section class="tip-section" aria-label="Dica prática do dia">
+          <h4>Dica prática</h4>
+          <p id="dayTip"></p>
+        </section>
+
+        <section class="video-section" aria-label="Vídeo motivacional">
+          <h4>Vídeo motivacional</h4>
+          <div class="video-wrapper">
+            <iframe
+              id="videoFrame"
+              src=""
+              title="Vídeo motivacional"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </section>
+
+        <section class="reflection-section" aria-label="Reflexão pessoal">
+          <h4>Reflexão do dia</h4>
+          <p>Escreva um insight ou aprendizado para registrar sua jornada.</p>
+          <textarea id="reflectionInput" rows="4" placeholder="Hoje eu aprendi que..."></textarea>
+          <div class="reflection-actions">
+            <button id="saveReflection" class="button button--secondary">Salvar reflexão</button>
+            <span id="saveMessage" class="save-message" role="status" aria-live="polite"></span>
+          </div>
+        </section>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      © <span id="currentYear"></span> Vencer com Visão · Construindo histórias de superação com foco e
+      propósito.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
